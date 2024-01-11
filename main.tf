@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "my-first-server" {
-  ami           = "0014ce3e52359afbd"  # Replace with the correct AMI ID
+  ami           = "ami-06478978e5e72679a"   
   instance_type = "t3.micro"
 
   tags = {
@@ -15,9 +15,10 @@ resource "aws_instance" "my-first-server" {
 
 resource "aws_s3_bucket" "b" {
   bucket = "my-tf-test-cloud-cruiser"
-  acl    = "private"  
 
-versioning {
+  acl = "private"
+
+  versioning {
     enabled = true
   }
 
